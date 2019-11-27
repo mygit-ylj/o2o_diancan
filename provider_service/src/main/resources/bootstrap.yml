@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: provider-service
+  cloud:
+    config:
+      uri: http://localhost:7001
+      profile: dev
+      label: master
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss

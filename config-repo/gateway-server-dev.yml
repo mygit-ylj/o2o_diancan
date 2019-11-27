@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: product_route
+        uri: lb://product-service
+        predicates:
+        - Path=/sell/buyer/**
+        filters:
+        - StripPrefix=1
+        order: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka/
